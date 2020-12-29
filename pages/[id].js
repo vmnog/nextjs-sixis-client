@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 function Post({ post }) {
@@ -8,11 +9,16 @@ function Post({ post }) {
   }
 
   return (
-    <li key={post.id}>
-      <span>{post.date}</span>
-      <strong>{post.title}</strong>
-      <p>{post.content}</p>
-    </li>
+    <div>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
+      <div key={post.id}>
+        <span>{post.date}</span>
+        <strong>{post.title}</strong>
+        <p>{post.content}</p>
+      </div>
+    </div>
   );
 }
 
@@ -35,6 +41,7 @@ export async function getStaticPaths() {
   };
 }
 
+// Método que acha o resto das informações do post passado pelo params.id
 export async function getStaticProps(context) {
   const res = await fetch(
     `http://localhost:3000/api/posts/${context.params.id}`
