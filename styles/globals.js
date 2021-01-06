@@ -6,11 +6,14 @@ export const GlobalStyle = createGlobalStyle`
     // colors
     --bg-white: #f5f5f5;
     --text-black: #242323;
+    --red: #DD403A;
 
     // text sizes
     --text-sm: 0.6rem;
     --text-md: 1rem;
-    --text-lg: 1.6rem;
+    --text-lg: 1.2rem;
+    --text-lgx1: 1.7rem;
+    --text-lgx2: 2.6rem;
 
     // spacing
     --space-sm: 20px;

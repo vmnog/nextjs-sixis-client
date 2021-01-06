@@ -1,8 +1,8 @@
 import Home from '../containers/Home';
 
-function Blog({ posts }) {
+const Blog = ({ posts }) => {
   return <Home posts={posts} />;
-}
+};
 
 // This function gets called at build time
 export async function getStaticProps() {

@@ -13,7 +13,7 @@ export const Container = styled.div`
   padding: var(--padding-global);
 
   & > h1 {
-    font-size: var(--text-lg);
+    font-size: var(--text-lgx1);
   }
 
   & > ul {

@@ -1,7 +1,6 @@
 import React from 'react';
-import { GlobalStyle } from '../../styles/globals';
-
 import Post from '../Post';
+import { GlobalStyle } from '../../styles/globals';
 
 export default {
   title: 'Example/Post',

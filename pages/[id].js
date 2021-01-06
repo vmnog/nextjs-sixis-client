@@ -1,7 +1,7 @@
 import PostContainer from '../containers/PostContainer';
 import { useRouter } from 'next/router';
 
-function Post({ post }) {
+const Post = ({ post }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -9,7 +9,7 @@ function Post({ post }) {
   }
 
   return <PostContainer post={post} />;
-}
+};
 
 // Método que gera as paginas estaticas no tempo de build pra cada post
 export async function getStaticPaths() {

@@ -1,18 +1,23 @@
 import React from 'react';
 import Head from 'next/head';
 import { Container } from './styles';
+import { useRouter } from 'next/router';
+import PostPage from '../../components/PostPage';
 
 const PostContainer = ({ post }) => {
+  const router = useRouter();
+
+  const handleGoBack = () => {
+    router.back();
+  };
+
   return (
     <Container>
       <Head>
         <title>{post.title}</title>
       </Head>
-      <div key={post.id}>
-        <strong>{post.title}</strong>
-        <span>{post.date}</span>
-        <p>{post.content}</p>
-      </div>
+      <strong onClick={handleGoBack}>{'<-'} Voltar</strong>
+      <PostPage post={post} />
     </Container>
   );
 };

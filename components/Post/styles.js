@@ -30,23 +30,30 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     color: var(--text-black);
 
     & > strong {
+      max-width: 80%;
+
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 80%;
+
       margin-right: var(--space-sm);
+      font-size: var(--text-lg);
     }
   }
 
   & > p {
     color: var(--text-black);
 
+    max-width: 60%;
+
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 60%;
+
+    font-size: var(--text-md);
   }
 `;
