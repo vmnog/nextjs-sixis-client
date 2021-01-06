@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { handleLimitString } from '../../utils/handleLimitString';
 import { Container } from './styles';
 
-const Post = ({ post: { id, title, content, date } }) => {
+const Post = ({ post: { id, title, content, date }, isListItem }) => {
   return (
-    <Container key={id}>
+    <Container key={id} spacedItem={isListItem}>
       <div>
         <strong>{title}</strong>
         <span>{date}</span>

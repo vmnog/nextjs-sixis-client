@@ -1,6 +1,6 @@
 import React from 'react';
 import { GlobalStyle } from '../../styles/globals';
-import { action } from '@storybook/addon-actions';
+import { addons } from '@storybook/addons';
 
 import Post from '../Post';
 
@@ -20,6 +20,11 @@ export default {
     date: {
       description: 'Data de publicação',
     },
+    isListItem: {
+      control: 'boolean',
+      description:
+        'Aplica um espaçamento diferente caso seja um item de uma lista',
+    },
   },
 };
 
@@ -31,10 +36,10 @@ const post = {
   date: '29/12/2020',
 };
 
-const Template = (post) => (
+const Template = ({ id, title, content, date, isListItem }) => (
   <>
     <GlobalStyle />
-    <Post post={post} />
+    <Post post={{ id, title, content, date }} isListItem={isListItem} />
   </>
 );
 
@@ -44,4 +49,5 @@ Default.args = {
   title: post.title,
   content: post.content,
   date: post.date,
+  isListItem: false,
 };

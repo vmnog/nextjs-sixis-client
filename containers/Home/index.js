@@ -15,7 +15,7 @@ const Home = ({ posts }) => {
       <ul>
         {posts.map((post) => (
           <Link href={`/${post.id}`}>
-            <Post post={post} />
+            <Post post={post} isListItem={true} />
           </Link>
         ))}
       </ul>

@@ -13,7 +13,7 @@ export const Container = styled.div`
   background: white;
 
   padding: var(--space-md);
-  margin-top: var(--space-md);
+  margin-top: ${(props) => (props.spacedItem ? 'var(--space-md)' : '0')};
 
   -webkit-box-shadow: 10px 9px 16px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 10px 9px 16px 0px rgba(0, 0, 0, 0.1);
