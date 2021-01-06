@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Post from '../../components/Post';
 
 import { Container } from './styles';
 
@@ -9,16 +10,13 @@ const Home = ({ posts }) => {
       <Head>
         <title>Sixis - Últimas Publicações</title>
       </Head>
+
+      <h1>Últimas Publicações</h1>
       <ul>
         {posts.map((post) => (
-          <li key={post.id}>
-            <Link href={`/${post.id}`}>
-              <button>Visualizar</button>
-            </Link>
-            <strong>{post.title}</strong>
-            <span>{post.date}</span>
-            <p>{post.content}</p>
-          </li>
+          <Link href={`/${post.id}`}>
+            <Post post={post} />
+          </Link>
         ))}
       </ul>
     </Container>

@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import PostContainer from '../containers/PostContainer';
 import { useRouter } from 'next/router';
 
 function Post({ post }) {
@@ -8,18 +8,7 @@ function Post({ post }) {
     return <div>Carregando...</div>;
   }
 
-  return (
-    <div>
-      <Head>
-        <title>{post.title}</title>
-      </Head>
-      <div key={post.id}>
-        <span>{post.date}</span>
-        <strong>{post.title}</strong>
-        <p>{post.content}</p>
-      </div>
-    </div>
-  );
+  return <PostContainer post={post} />;
 }
 
 // Método que gera as paginas estaticas no tempo de build pra cada post

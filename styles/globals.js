@@ -1,10 +1,23 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  // Global Colors
+  // Global variables
   :root {
+    // colors
     --bg-white: #f5f5f5;
     --text-black: #242323;
+
+    // text sizes
+    --text-sm: 0.6rem;
+    --text-md: 1rem;
+    --text-lg: 1.6rem;
+
+    // spacing
+    --space-sm: 20px;
+    --space-md: 40px;
+    --space-lg: 80px;
+
+    --padding-global: 2rem 20%;
   }
 
   :root, html,
@@ -12,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-family: Inter, -apple-system, sans-serif;
-    font-size: 16px;
+    font-size: var(--text-md);
 
     background: var(--bg-white);
     color: var(--text-black);
@@ -22,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
   
   button {
     font-family: Inter, -apple-system, sans-serif;
-    font-size: 16px;
+    font-size: var(--text-md);
     border: none;
     background: none;
     padding: 5px 15px;

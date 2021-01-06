@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Layout = styled.div`
+export const Container = styled.div`
   display: flex;
   align-items: center;
 
@@ -9,5 +9,5 @@ export const Layout = styled.div`
 
   min-height: 100vh;
 
-  padding: 2rem 20%;
+  padding: var(--padding-global);
 `;
