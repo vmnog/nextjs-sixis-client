@@ -1,6 +1,5 @@
 import React from 'react';
 import { GlobalStyle } from '../../styles/globals';
-import { addons } from '@storybook/addons';
 
 import Post from '../Post';
 

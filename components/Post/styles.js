@@ -37,6 +37,7 @@ export const Container = styled.div`
       overflow: hidden;
       text-overflow: ellipsis;
       max-width: 80%;
+      margin-right: var(--space-sm);
     }
   }
 
