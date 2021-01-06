@@ -7,7 +7,7 @@ const PostPage = ({ post }) => {
     <Container key={post.id}>
       <h1>{post.title}</h1>
       <span>Data de publicação: {post.date}</span>
-      <p>{post.content}</p>
+      <p dangerouslySetInnerHTML={{ __html: post.content }}></p>
     </Container>
   );
 };
