@@ -22,6 +22,7 @@ export const Container = styled.div`
   }
 
   p {
+    align-self: flex-start;
     font-size: var(--text-lg);
     padding-bottom: var(--space-lg);
     text-align: justify;
