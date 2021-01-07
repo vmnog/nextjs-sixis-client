@@ -4,24 +4,24 @@ export const Container = styled.button`
   margin: 0;
   padding: 0;
 
-  & > strong {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    padding: 5px 15px;
+  width: 110px;
+  height: 40px;
+  padding: 10px;
 
-    border-radius: 8px;
+  border-radius: 8px;
 
-    color: var(--red);
+  transition: opacity 0.2s ease;
 
+  &:hover {
     cursor: pointer;
+    background: rgba(1, 1, 1, 0.03);
+  }
 
-    transition: opacity 0.2s ease;
-
-    &:hover {
-      background: rgba(1, 1, 1, 0.03);
-      /* opacity: 0.7; */
-    }
+  & > strong {
+    color: var(--red);
   }
 `;

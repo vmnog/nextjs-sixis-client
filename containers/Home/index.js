@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Post from '../../components/Post';
+import Header from '../../components/Header';
 
 import { Container } from './styles';
 
@@ -9,7 +10,7 @@ const Home = ({ posts }) => {
       <Head>
         <title>Sixis - Últimas Publicações</title>
       </Head>
-
+      <Header />
       <h1>Últimas Publicações</h1>
       <ul>
         {posts.map((post) => (

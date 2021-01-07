@@ -9,10 +9,8 @@ const GoBackButton = ({ router }) => {
 
   return (
     <Container onClick={handleGoBack}>
-      <strong>
-        <LeftArrowAlt size={30} color="var(--red)" />
-        Voltar
-      </strong>
+      <LeftArrowAlt size={30} color="var(--red)" />
+      <strong>Voltar</strong>
     </Container>
   );
 };

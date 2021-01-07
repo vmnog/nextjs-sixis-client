@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     --bg-white: #f5f5f5;
     --text-black: #242323;
     --red: #DD403A;
+    --dark-red: #bf312a;
 
     // text sizes
     --text-sm: 0.6rem;
@@ -20,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     --space-md: 40px;
     --space-lg: 80px;
 
-    --padding-global: 2rem 20%;
+    --maxwidth-global: 1000px;
   }
 
   :root, html,
