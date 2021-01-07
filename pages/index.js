@@ -1,13 +1,27 @@
+import { useEffect } from 'react';
+import { api } from '../services/axios';
 import Home from '../containers/Home';
+import { usePostStore } from '../stores/posts.store';
 
 const Blog = ({ posts }) => {
+  const { globalPosts, setGlobalPosts } = usePostStore();
+
+  useEffect(() => {
+    console.log(globalPosts);
+    setGlobalPosts(posts);
+  }, [globalPosts]);
+
   return <Home posts={posts} />;
 };
 
 // This function gets called at build time
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:3000/api/posts');
-  const posts = await res.json();
+  const { data: posts } = await api.get('posts', {
+    headers: {
+      Authorization:
+        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDk5NjY2NjgsImV4cCI6MTYxMDA1MzA2OCwic3ViIjoie1wiaWRcIjpcImMwYjcxNTEwLTdhNDktNGNjOC04OTRjLTI2NWUwNTE2ZGIwNFwiLFwidHlwZVwiOlwiYWRtaW5cIn0ifQ.lbwwOVDTL7Y2j3v5-UVsH3Vda063Gb3TJEwZXDg3eIw',
+    },
+  });
 
   return {
     props: {

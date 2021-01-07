@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import Post from '../../components/Post';
 
 import { Container } from './styles';
@@ -14,7 +13,7 @@ const Home = ({ posts }) => {
       <h1>Últimas Publicações</h1>
       <ul>
         {posts.map((post) => (
-          <Post post={post} isListItem={true} />
+          <Post key={post.id} post={post} isListItem={true} />
         ))}
       </ul>
     </Container>

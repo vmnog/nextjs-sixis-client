@@ -15,7 +15,7 @@ export default {
     content: {
       description: 'Conteúdo',
     },
-    date: {
+    created_at: {
       description: 'Data de publicação',
     },
     isListItem: {
@@ -31,13 +31,13 @@ const post = {
   title: 'O aumento do diálogo entre os diferentes setores produtivos',
   content:
     'No entanto, não podemos esquecer que a complexidade dos estudos efetuados talvez venha a ressaltar a relatividade do investimento em reciclagem técnica.',
-  date: '29/12/2020',
+  created_at: '2021-01-06T20:58:22.435Z',
 };
 
-const Template = ({ id, title, content, date, isListItem }) => (
+const Template = ({ id, title, content, created_at, isListItem }) => (
   <>
     <GlobalStyle />
-    <Post post={{ id, title, content, date }} isListItem={isListItem} />
+    <Post post={{ id, title, content, created_at }} isListItem={isListItem} />
   </>
 );
 
@@ -46,6 +46,6 @@ Default.args = {
   id: post.id,
   title: post.title,
   content: post.content,
-  date: post.date,
+  created_at: post.created_at,
   isListItem: false,
 };
