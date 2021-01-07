@@ -5,8 +5,6 @@ import { api } from '../services/axios';
 const Post = ({ post }) => {
   const router = useRouter();
 
-  console.log({ post });
-
   if (router.isFallback) {
     return <div>Carregando...</div>;
   }

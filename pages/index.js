@@ -1,16 +1,7 @@
-import { useEffect } from 'react';
-import { api } from '../services/axios';
 import Home from '../containers/Home';
-import { usePostStore } from '../stores/posts.store';
+import { api } from '../services/axios';
 
 const Blog = ({ posts }) => {
-  const { globalPosts, setGlobalPosts } = usePostStore();
-
-  useEffect(() => {
-    console.log(globalPosts);
-    setGlobalPosts(posts);
-  }, [globalPosts]);
-
   return <Home posts={posts} />;
 };
 
