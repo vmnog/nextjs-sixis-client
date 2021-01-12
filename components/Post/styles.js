@@ -55,5 +55,18 @@ export const Container = styled.div`
     text-overflow: ellipsis;
 
     font-size: var(--text-md);
+
+    & > strong,
+    span,
+    small,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p {
+      font-weight: normal !important;
+      font-size: var(--text-md) !important;
+    }
   }
 `;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { api } from '../../services/axios';
 
 import Button from '../../components/Button';
@@ -7,6 +8,7 @@ import { Container } from './styles';
 import { useAuthStore } from '../../stores/auth.store';
 
 const Header = ({ isLogged, user }) => {
+  const router = useRouter();
   const { onLogin, onLogout } = useAuthStore();
 
   const handleLogin = async () => {
@@ -30,12 +32,25 @@ const Header = ({ isLogged, user }) => {
     onLogout();
   };
 
+  const handleNavigateToPublish = () => {
+    router.push('publish');
+  };
+
   return (
     <Container>
       {isLogged ? (
         <div>
           <strong>{user.email}</strong>
-          <Button onClick={handleLogout} label="Sair" style="outlined" />
+          <div>
+            {router.pathname !== '/publish' && (
+              <Button
+                onClick={handleNavigateToPublish}
+                label="Criar Publicação"
+                style="filled"
+              />
+            )}
+            <Button onClick={handleLogout} label="Sair" style="outlined" />
+          </div>
         </div>
       ) : (
         <Button onClick={handleLogin} label="Entrar" style="filled" />

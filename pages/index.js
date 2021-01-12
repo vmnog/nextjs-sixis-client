@@ -1,8 +1,8 @@
-import Home from '../containers/Home';
+import HomeContainer from '../containers/HomeContainer';
 import { api } from '../services/axios';
 
 const Blog = ({ posts }) => {
-  return <Home posts={posts} />;
+  return <HomeContainer posts={posts} />;
 };
 
 // This function gets called at build time

@@ -13,9 +13,17 @@ export const Container = styled.header`
 
   & > div {
     width: 100%;
-    border: 1px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
+    & > div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      & button + button {
+        margin-left: var(--space-sm);
+      }
+    }
   }
 `;

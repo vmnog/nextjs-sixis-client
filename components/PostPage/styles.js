@@ -30,5 +30,6 @@ export const Container = styled.div`
     font-size: var(--text-lg);
     padding-bottom: var(--space-lg);
     text-align: justify;
+    line-height: 1.8em;
   }
 `;
