@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { Container } from './styles';
 import { formatDate } from '../../utils/handleFormatDate';
 
-const Post = ({ post: { id, title, content, created_at }, isListItem }) => {
+const Post = ({ post: { post_id, title, content, created_at }, isListItem }) => {
   return (
-    <Link href={`/${id}`}>
-      <Container key={id} spacedItem={isListItem}>
+    <Link href={`/${post_id}`}>
+      <Container key={post_id} spacedItem={isListItem}>
         <div>
           <strong>{title}</strong>
           <span>{formatDate(created_at)}</span>

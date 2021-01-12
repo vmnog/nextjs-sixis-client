@@ -2,7 +2,8 @@ import create from 'zustand';
 
 export const useAuthStore = create((set) => ({
   token: '',
+  user: {},
   isLogged: false,
-  onLogin: (token) => set((state) => ({ token, isLogged: true })),
+  onLogin: (token, user) => set(() => ({ token, user, isLogged: true })),
   onLogout: () => set(() => ({ token: '', isLogged: false })),
 }));

@@ -1,20 +1,23 @@
 import Head from 'next/head';
 import Post from '../../components/Post';
 import Header from '../../components/Header';
+import { useAuthStore } from '../../stores/auth.store';
 
 import { Container } from './styles';
 
 const Home = ({ posts }) => {
+  const { isLogged } = useAuthStore();
+
   return (
     <Container>
       <Head>
         <title>Sixis - Últimas Publicações</title>
       </Head>
-      <Header />
+      <Header isLogged={isLogged} />
       <h1>Últimas Publicações</h1>
       <ul>
         {posts.map((post) => (
-          <Post key={post.id} post={post} isListItem={true} />
+          <Post key={post.post_id} post={post} isListItem={true} />
         ))}
       </ul>
     </Container>

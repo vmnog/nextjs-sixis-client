@@ -44,6 +44,7 @@ export const GlobalStyle = createGlobalStyle`
     background: none;
     padding: 5px 15px;
     color: #141414;
+    outline: none;
   }
 
   div {

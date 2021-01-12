@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 
   & > ul {
-    padding: 0 var(--space-sm);
+    padding: var(--space-sm);
 
     width: 100vw;
 

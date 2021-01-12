@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const Button = () => {
+const Button = ({ onClick, label, style }) => {
   return (
-    <Container>
-      <strong>Entrar</strong>
+    <Container onClick={onClick} buttonStyle={style}>
+      <strong>{label}</strong>
     </Container>
   );
 };
