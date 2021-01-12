@@ -6,8 +6,8 @@ import Button from '../../components/Button';
 import { Container } from './styles';
 import { useAuthStore } from '../../stores/auth.store';
 
-const Header = ({ isLogged }) => {
-  const { onLogin, onLogout, user } = useAuthStore();
+const Header = ({ isLogged, user }) => {
+  const { onLogin, onLogout } = useAuthStore();
 
   const handleLogin = async () => {
     const { data } = await api.post('sessions', {

@@ -10,10 +10,14 @@ export default {
   },
 };
 
+const user = {
+  email: 'admin@admin.com',
+};
+
 const Template = ({ isLogged }) => (
   <>
     <GlobalStyle />
-    <Header isLogged={isLogged} />
+    <Header isLogged={isLogged} user={user} />
   </>
 );
 

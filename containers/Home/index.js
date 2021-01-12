@@ -6,14 +6,14 @@ import { useAuthStore } from '../../stores/auth.store';
 import { Container } from './styles';
 
 const Home = ({ posts }) => {
-  const { isLogged } = useAuthStore();
+  const { isLogged, user } = useAuthStore();
 
   return (
     <Container>
       <Head>
         <title>Sixis - Últimas Publicações</title>
       </Head>
-      <Header isLogged={isLogged} />
+      <Header isLogged={isLogged} user={user} />
       <h1>Últimas Publicações</h1>
       <ul>
         {posts.map((post) => (

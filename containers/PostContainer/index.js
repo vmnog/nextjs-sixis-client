@@ -10,7 +10,7 @@ import { Container } from './styles';
 import { useAuthStore } from '../../stores/auth.store';
 
 const PostContainer = ({ post }) => {
-  const { isLogged, token } = useAuthStore();
+  const { isLogged, user } = useAuthStore();
   const router = useRouter();
 
   const handleRemove = async () => {
@@ -24,7 +24,7 @@ const PostContainer = ({ post }) => {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <Header isLogged={isLogged} />
+      <Header isLogged={isLogged} user={user} />
 
       <PostPage post={post} />
 
