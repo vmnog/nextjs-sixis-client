@@ -8,6 +8,8 @@ export const Container = styled.button`
   align-items: center;
   justify-content: space-between;
 
+  align-self: flex-start;
+
   width: 110px;
   height: 40px;
   padding: 10px;

@@ -1,6 +1,7 @@
 import PostContainer from '../containers/PostContainer';
 import { useRouter } from 'next/router';
 import { api } from '../services/axios';
+import RouterMiddleware from '../components/RouterMiddleware';
 
 const Post = ({ post }) => {
   const router = useRouter();
@@ -9,7 +10,11 @@ const Post = ({ post }) => {
     return <div>Carregando...</div>;
   }
 
-  return <PostContainer post={post} />;
+  return (
+    <RouterMiddleware>
+      <PostContainer post={post} />
+    </RouterMiddleware>
+  );
 };
 
 // Método que gera as paginas estaticas no tempo de build pra cada post
