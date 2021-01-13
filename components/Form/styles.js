@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  margin-top: var(--space-md);
+
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-
-  margin: auto;
-  max-width: var(--maxwidth-global);
-
   width: 100%;
 
-  padding: 0 var(--space-sm);
+  & > div + div {
+    margin-top: var(--space-md);
+  }
+
+  & > button {
+    margin-top: var(--space-md);
+  }
 `;

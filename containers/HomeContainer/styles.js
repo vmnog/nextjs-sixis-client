@@ -5,7 +5,10 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
 
-  width: 100vw;
+  margin: auto;
+  max-width: var(--maxwidth-global);
+
+  width: 100%;
   height: 100%;
 
   padding: 0 var(--space-sm);
@@ -15,12 +18,12 @@ export const Container = styled.div`
   }
 
   & > ul {
-    padding: var(--space-sm);
-
-    width: 100vw;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    padding: var(--space-sm) 0;
   }
 `;

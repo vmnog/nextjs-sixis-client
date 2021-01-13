@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.header`
   height: 80px;
   width: 100%;
-  max-width: var(--maxwidth-global);
+  /* max-width: var(--maxwidth-global); */
 
   margin-top: var(--space-md);
 
