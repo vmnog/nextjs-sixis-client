@@ -1,12 +1,7 @@
 import PublishContainer from '../containers/PublishContainer';
-import RouterMiddleware from '../components/RouterMiddleware';
 
 const Publish = () => {
-  return (
-    <RouterMiddleware>
-      <PublishContainer />
-    </RouterMiddleware>
-  );
+  return <PublishContainer />;
 };
 
 export default Publish;
