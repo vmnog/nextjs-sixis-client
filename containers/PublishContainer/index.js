@@ -27,13 +27,9 @@ const PublishContainer = () => {
 
   return (
     <Container>
-      {isLogged && (
-        <>
-          <Header isLogged={isLogged} user={user} />
-          <GoBackButton router={router} />
-          <Form />
-        </>
-      )}
+      <Header isLogged={isLogged} user={user} />
+      <GoBackButton router={router} />
+      <Form />
     </Container>
   );
 };

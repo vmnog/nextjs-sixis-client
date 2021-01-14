@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import * as Yup from 'yup';
+
 import Input from '../Input';
 import Button from '../Button';
 
@@ -15,18 +17,18 @@ const Form = () => {
       titulo: '',
       conteudo: '',
     },
+    validationSchema: Yup.object({
+      titulo: Yup.string().required('O campo título é obrigatório'),
+      conteudo: Yup.string().required('O campo conteúdo é obrigatório'),
+    }),
     onSubmit: (values) => handlePublish(values),
   });
 
   const handlePublish = async (values) => {
-    console.log({ values });
-
-    const { data } = await api.post('posts', {
+    await api.post('posts', {
       title: values.titulo,
       content: values.conteudo,
     });
-
-    console.log({ data });
 
     router.push('/');
   };
@@ -34,22 +36,28 @@ const Form = () => {
   return (
     <Container>
       <form onSubmit={formik.handleSubmit}>
+        {formik.touched.titulo && formik.errors.titulo && (
+          <span>{formik.errors.titulo}</span>
+        )}
         <Input
           label="Título"
+          name="titulo"
           value={formik.values.titulo}
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          maxLength={50}
         />
+        {formik.touched.conteudo && formik.errors.conteudo && (
+          <span>{formik.errors.conteudo}</span>
+        )}
         <Input
           label="Conteúdo"
+          name="conteudo"
           value={formik.values.conteudo}
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
         />
-        <Button
-          type="submit"
-          label="Publicar"
-          onClick={() => {}}
-          style="filled"
-        />
+        <Button type="submit" label="Publicar" style="filled" />
       </form>
     </Container>
   );

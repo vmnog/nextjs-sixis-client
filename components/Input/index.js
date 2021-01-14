@@ -3,16 +3,21 @@ import React from 'react';
 import { Container } from './styles';
 import { handleLatinizeString } from '../../utils/handleLatinizeString';
 
-const Input = ({ label, onChange, value }, ...props) => {
+const Input = (
+  { label, name, onChange, onBlur, value, maxLength },
+  ...props
+) => {
   return (
     <Container>
-      <label htmlFor={handleLatinizeString(label)}>{label}</label>
+      <label htmlFor={name}>{label}</label>
       <input
-        id={handleLatinizeString(label)}
+        id={name}
         onChange={onChange}
+        onBlur={onBlur}
         value={value}
         placeholder={`${label} da publicação`}
         autoComplete="off"
+        maxLength={maxLength}
         {...props}
       />
     </Container>
