@@ -7,13 +7,16 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
 
-  & > div + div {
+  & > form {
+    width: 100%;
+  }
+
+  & > form > div {
     margin-top: var(--space-md);
   }
 
-  & > button {
+  & > form > button {
     margin-top: var(--space-md);
   }
 `;

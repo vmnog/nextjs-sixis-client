@@ -31,7 +31,7 @@ const PublishContainer = () => {
         <>
           <Header isLogged={isLogged} user={user} />
           <GoBackButton router={router} />
-          <Form handlePublish={handlePublish} />
+          <Form />
         </>
       )}
     </Container>

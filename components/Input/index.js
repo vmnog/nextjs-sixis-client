@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { Container } from './styles';
+import { handleLatinizeString } from '../../utils/handleLatinizeString';
 
 const Input = ({ label, onChange, value }, ...props) => {
   return (
     <Container>
-      <label htmlFor={label}>{label}</label>
+      <label htmlFor={handleLatinizeString(label)}>{label}</label>
       <input
-        id={label}
+        id={handleLatinizeString(label)}
         onChange={onChange}
         value={value}
         placeholder={`${label} da publicação`}
